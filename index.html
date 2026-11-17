@@ -1,1 +1,80 @@
-<!DOCTYPE html>
+
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Знакомства Москва</title>
+<style>
+:root{--bg:#090909;--gold:#d7ad55;--gold2:#f2d58b;--muted:#b8b1a3;--line:rgba(215,173,85,.25);--white:#f7f3e9}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 50% -15%,#30230d,#11100d 34%,var(--bg) 70%);color:var(--white);font-family:Arial,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+header{padding:22px 0;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:.08em;color:var(--gold2)}
+.navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}
+.hero{padding:86px 0 64px;text-align:center}
+.eyebrow,.kicker{color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:11px;font-weight:800}
+h1{font-size:clamp(38px,7vw,68px);line-height:1.04;margin:18px auto}
+h1 span{color:var(--gold2)}
+.lead{max-width:620px;margin:auto;color:var(--muted);font-size:17px}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;justify-content:center;padding:13px 22px;border-radius:999px;font-weight:750;font-size:14px}
+.primary{background:linear-gradient(135deg,var(--gold2),#bd8d35);color:#171109}
+.secondary{border:1px solid var(--line);color:var(--gold2)}
+section{padding:42px 0 58px}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}
+h2{font-size:clamp(27px,4vw,38px);margin:7px 0}
+.note,.desc{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:linear-gradient(145deg,#1f1b13,#111110);border:1px solid var(--line);border-radius:20px;padding:25px}
+.card-top{display:flex;align-items:center;justify-content:space-between}
+.icon{width:42px;height:42px;border:1px solid var(--line);border-radius:13px;display:grid;place-items:center;color:var(--gold2);font-size:20px}
+.tag{font-size:10px;color:var(--gold2);border:1px solid var(--line);border-radius:99px;padding:6px 9px}
+h3{font-size:21px;margin:19px 0 6px}
+.price{font-size:27px;font-weight:850;color:var(--gold2);margin:8px 0 17px}
+.card .btn{width:100%}
+.featured{border-color:rgba(242,213,139,.55)}
+.featured h3{color:var(--gold2)}
+.adbox{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#211b10;border:1px solid var(--line);border-radius:20px;padding:28px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:#898273;font-size:12px}
+@media(max-width:700px){.navlinks{display:none}.hero{padding:64px 0 45px}.grid{grid-template-columns:1fr}.section-head{display:block}.adbox{display:block}.adbox .btn{margin-top:18px;width:100%}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#">ЗНАКОМСТВА МОСКВА</a>
+<nav class="navlinks"><a href="#profiles">Девушки</a><a href="#chats">Чаты</a><a href="#ads">Реклама</a></nav>
+<a class="btn secondary" href="https://t.me/ZnMoscowShopBot">Открыть бота</a>
+</div></header>
+<main>
+<div class="wrap hero">
+<div class="eyebrow">Москва • каталог услуг</div>
+<h1>Твой круг общения.<br><span>Твои возможности.</span></h1>
+<p class="lead">Выбирай подходящий раздел, знакомься с предложениями и уточняй детали в Telegram.</p>
+<div class="actions"><a class="btn primary" href="https://t.me/ZnMoscowShopBot">Перейти в Telegram</a><a class="btn secondary" href="#profiles">Смотреть каталог</a></div>
+</div>
+<section class="wrap" id="profiles">
+<div class="section-head"><div><div class="kicker">Раздел 01</div><h2>Девушки</h2></div><div class="note">Главный раздел каталога</div></div>
+<div class="grid">
+<article class="card featured"><div class="card-top"><div class="icon">✦</div><span class="tag">С МП</span></div><h3>Девушки с МП</h3><p class="desc">Подборка анкет. Уточни условия и актуальность предложения у администратора.</p><div class="price">2 500 ₽</div><a class="btn primary" href="https://t.me/ZnMoscowShopBot">Выбрать в боте</a></article>
+<article class="card"><div class="card-top"><div class="icon">◇</div><span class="tag">Без МП</span></div><h3>Девушки без МП</h3><p class="desc">Подробности и доступность можно уточнить в Telegram.</p><div class="price">6 000 ₽</div><a class="btn primary" href="https://t.me/ZnMoscowShopBot">Выбрать в боте</a></article>
+</div>
+</section>
+<section class="wrap" id="chats">
+<div class="section-head"><div><div class="kicker">Раздел 02</div><h2>Чаты и доступ</h2></div><div class="note">Условия доступа указаны в карточках</div></div>
+<div class="grid">
+<article class="card"><div class="card-top"><div class="icon">♛</div><span class="tag">VIP</span></div><h3>VIP-чаты</h3><p class="desc">Доступ к VIP-разделу на постоянной основе.</p><div class="price">1 500 ₽ <small>один раз</small></div><a class="btn primary" href="https://t.me/ZnMoscowShopBot">Получить доступ</a></article>
+<article class="card"><div class="card-top"><div class="icon">◆</div><span class="tag">Private</span></div><h3>Приватные чаты</h3><p class="desc">Постоянный доступ к приватному разделу.</p><div class="price">2 999 ₽ <small>один раз</small></div><a class="btn primary" href="https://t.me/ZnMoscowShopBot">Получить доступ</a></article>
+</div>
+</section>
+<section class="wrap" id="ads">
+<div class="section-head"><div><div class="kicker">Раздел 03</div><h2>Реклама</h2></div></div>
+<div class="adbox"><div><h3 style="margin:0">Разместить рекламу</h3><p class="desc">Несколько тарифов. Стоимость, формат и свободные места согласовываются с администратором.</p></div><a class="btn primary" href="https://t.me/ZnMoscowShopBot">Узнать тарифы</a></div>
+</section>
+</main>
+<footer><div class="wrap">ЗНАКОМСТВА МОСКВА<br>Каталог услуг и переход в Telegram</div></footer>
+</body>
+</html>
