@@ -5,145 +5,561 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Знакомства Москва — анкеты, общение, чаты и Telegram-группы.">
+<meta name="description" content="Знакомства Москва — Telegram-группы, общение, анкеты, VIP-чаты и реклама.">
 <meta name="robots" content="index, follow">
-<title>Знакомства Москва</title>
+<title>Знакомства Москва — знакомства и общение</title>
+
 <style>
-:root{--bg:#090909;--gold:#d7ad55;--gold2:#f2d58b;--muted:#b8b1a3;--line:rgba(215,173,85,.25);--white:#f7f3e9}
+:root{
+  --bg:#080808;
+  --panel:#15130f;
+  --panel2:#1e1910;
+  --gold:#d7ad55;
+  --gold2:#f5dc9b;
+  --muted:#b8b1a3;
+  --line:rgba(215,173,85,.25);
+  --white:#fffaf0;
+}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at 50% -15%,#30230d,#11100d 34%,var(--bg) 70%);color:var(--white);font-family:Arial,sans-serif;line-height:1.55}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse at 50% -15%,#39280e 0%,#15120d 35%,var(--bg) 72%);
+  color:var(--white);
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+}
 a{color:inherit;text-decoration:none}
+button,a{-webkit-tap-highlight-color:transparent}
 .wrap{width:min(1120px,calc(100% - 36px));margin:auto}
-header{padding:22px 0;border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-weight:800;letter-spacing:.08em;color:var(--gold2)}
-.navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}
-.hero{padding:86px 0 64px;text-align:center}
-.eyebrow,.kicker{color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:11px;font-weight:800}
-h1{font-size:clamp(38px,7vw,68px);line-height:1.04;margin:18px auto}
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(8,8,8,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  font-weight:900;
+  letter-spacing:.08em;
+  color:var(--gold2);
+  font-size:15px;
+}
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  color:var(--muted);
+  font-size:13px;
+}
+.navlinks a:hover{color:var(--gold2)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:14px;
+  text-align:center;
+  transition:transform .2s,filter .2s;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.primary{
+  background:linear-gradient(135deg,var(--gold2),#bd8d35);
+  color:#171109;
+  box-shadow:0 7px 24px rgba(215,173,85,.13);
+}
+.secondary{
+  border:1px solid var(--line);
+  color:var(--gold2);
+  background:rgba(215,173,85,.04);
+}
+.hero{
+  padding:100px 0 78px;
+  text-align:center;
+}
+.eyebrow,.kicker{
+  color:var(--gold);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-size:11px;
+  font-weight:900;
+}
+h1{
+  font-size:clamp(40px,7vw,76px);
+  line-height:1.03;
+  margin:20px auto;
+  letter-spacing:-.04em;
+}
 h1 span{color:var(--gold2)}
-.lead{max-width:620px;margin:auto;color:var(--muted);font-size:17px}
-.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-flex;justify-content:center;padding:13px 22px;border-radius:999px;font-weight:750;font-size:14px}
-.primary{background:linear-gradient(135deg,var(--gold2),#bd8d35);color:#171109}
-.secondary{border:1px solid var(--line);color:var(--gold2)}
-section{padding:42px 0 58px}
-.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}
-h2{font-size:clamp(27px,4vw,38px);margin:7px 0}
+.lead{
+  max-width:650px;
+  margin:auto;
+  color:var(--muted);
+  font-size:17px;
+}
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
+.hero-note{
+  margin-top:30px;
+  color:#8e8575;
+  font-size:12px;
+}
+section{padding:65px 0}
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:28px;
+}
+h2{
+  font-size:clamp(29px,4vw,42px);
+  line-height:1.1;
+  margin:8px 0;
+}
 .note,.desc{color:var(--muted);font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.card{background:linear-gradient(145deg,#1f1b13,#111110);border:1px solid var(--line);border-radius:20px;padding:25px}
-.card-top{display:flex;align-items:center;justify-content:space-between}
-.icon{width:42px;height:42px;border:1px solid var(--line);border-radius:13px;display:grid;place-items:center;color:var(--gold2);font-size:20px}
-.tag{font-size:10px;color:var(--gold2);border:1px solid var(--line);border-radius:99px;padding:6px 9px}
-h3{font-size:21px;margin:19px 0 6px}
-.price{font-size:27px;font-weight:850;color:var(--gold2);margin:8px 0 17px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.card{
+  background:linear-gradient(145deg,#211c12,#111110);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:26px;
+  transition:transform .2s,border-color .2s;
+}
+.card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(242,213,139,.55);
+}
+.card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.icon{
+  width:46px;
+  height:46px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  color:var(--gold2);
+  font-size:21px;
+  background:rgba(215,173,85,.06);
+}
+.tag{
+  font-size:10px;
+  color:var(--gold2);
+  border:1px solid var(--line);
+  border-radius:99px;
+  padding:6px 10px;
+  letter-spacing:.08em;
+}
+h3{font-size:21px;margin:18px 0 7px}
+.price{
+  font-size:28px;
+  font-weight:900;
+  color:var(--gold2);
+  margin:12px 0 18px;
+}
 .card .btn{width:100%}
 .featured{border-color:rgba(242,213,139,.55)}
 .featured h3{color:var(--gold2)}
-.adbox{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#211b10;border:1px solid var(--line);border-radius:20px;padding:28px}
-footer{border-top:1px solid var(--line);padding:28px 0 40px;color:#898273;font-size:12px}
+.wide-card{
+  background:linear-gradient(120deg,#251d10,#11100d);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:32px;
+}
+.community-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.community{
+  padding:24px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.025);
+  border-radius:18px;
+}
+.community h3{margin-top:0}
+.about-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:20px;
+}
+.about-panel{
+  background:linear-gradient(145deg,#211c12,#111110);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px;
+}
+.about-list{
+  list-style:none;
+  padding:0;
+  margin:18px 0 0;
+}
+.about-list li{
+  padding:10px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+}
+.about-list li:last-child{border:0}
+.review-empty{
+  text-align:center;
+  padding:38px 24px;
+  border:1px dashed rgba(215,173,85,.4);
+  border-radius:22px;
+  background:rgba(215,173,85,.035);
+}
+.review-empty .icon{margin:0 auto 15px}
+.faq-list{display:grid;gap:12px}
+details{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px 21px;
+  background:rgba(255,255,255,.025);
+}
+summary{
+  cursor:pointer;
+  color:var(--gold2);
+  font-weight:800;
+}
+details p{color:var(--muted);font-size:14px;margin:13px 0 0}
+.adbox{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  background:linear-gradient(120deg,#2a2112,#15120c);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px;
+}
+footer{
+  border-top:1px solid var(--line);
+  padding:32px 0 42px;
+  color:#898273;
+  font-size:12px;
+}
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a:hover{color:var(--gold2)}
+@media(max-width:850px){
+  .navlinks{gap:12px;font-size:12px}
+}
 @media(max-width:700px){
-.navlinks{display:none}
-.hero{padding:64px 0 45px}
-.grid{grid-template-columns:1fr}
-.section-head{display:block}
-.adbox{display:block}
-.adbox .btn{margin-top:18px;width:100%}
-.actions .btn{width:100%}
+  .nav{padding:15px 0;flex-wrap:wrap}
+  .navlinks{
+    order:3;
+    width:100%;
+    justify-content:space-between;
+    overflow-x:auto;
+    padding:5px 0;
+  }
+  .nav>.btn{padding:10px 15px}
+  .hero{padding:68px 0 48px}
+  .lead{font-size:15px}
+  .actions .btn{width:100%}
+  section{padding:46px 0}
+  .grid,.community-grid,.about-grid{grid-template-columns:1fr}
+  .section-head{display:block}
+  .adbox{display:block}
+  .adbox .btn{width:100%;margin-top:15px}
+  .footer-row{display:block}
+  .footer-links{margin-top:16px}
 }
 </style>
 </head>
+
 <body>
 <header>
-<div class="wrap nav">
-<a class="brand" href="#">ЗНАКОМСТВА МОСКВА</a>
-<nav class="navlinks">
-<a href="#profiles">Девушки</a>
-<a href="#chats">Чаты</a>
-<a href="#ads">Реклама</a>
-</nav>
-<a class="btn secondary" href="https://t.me/sokk7772">Написать</a>
-</div>
+  <div class="wrap nav">
+    <a class="brand" href="#">ЗНАКОМСТВА МОСКВА</a>
+
+    <nav class="navlinks">
+      <a href="#profiles">Девушки</a>
+      <a href="#chats">Чаты</a>
+      <a href="#ads">Реклама</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#about">О проекте</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a class="btn primary" href="https://t.me/sokk7772">Написать</a>
+  </div>
 </header>
 
 <main>
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
 <div class="wrap hero">
-<div class="eyebrow">Москва • каталог услуг</div>
-<h1>Твой круг общения.<br><span>Твои возможности.</span></h1>
-<p class="lead">Выбирай подходящий раздел, знакомься с предложениями и уточняй детали в Telegram.</p>
+  <div class="eyebrow">Москва • знакомства • общение</div>
 
-<div class="actions">
-<a class="btn primary" href="https://t.me/sokk7772">Написать</a>
-<a class="btn primary" href="#profiles">Смотреть каталог</a>
-<a class="btn primary" href="https://t.me/+m8NU6G7r8r0xYzJi" target="_blank" rel="noopener noreferrer">Вступить в первую Telegram-группу</a>
-<a class="btn primary" href="https://t.me/vpiski_tusovki_moskvyy1" target="_blank" rel="noopener noreferrer">Вступить во вторую Telegram-группу</a>
-<a class="btn primary" href="https://t.me/ZnMoscowChatBot" target="_blank" rel="noopener noreferrer">Открыть бота</a>
-</div>
+  <h1>
+    Твой круг общения.<br>
+    <span>Твои возможности.</span>
+  </h1>
+
+  <p class="lead">
+    Находи интересные Telegram-сообщества, знакомься с новыми людьми
+    и выбирай подходящие направления на одной площадке.
+  </p>
+
+  <div class="actions">
+    <a class="btn primary" href="#profiles">Смотреть каталог</a>
+    <a class="btn primary" href="https://t.me/+m8NU6G7r8r0xYzJi" target="_blank" rel="noopener noreferrer">Первая Telegram-группа</a>
+    <a class="btn primary" href="https://t.me/vpiski_tusovki_moskvyy1" target="_blank" rel="noopener noreferrer">Вторая Telegram-группа</a>
+    <a class="btn primary" href="https://t.me/ZnMoscowChatBot" target="_blank" rel="noopener noreferrer">Открыть бота</a>
+  </div>
+
+  <div class="hero-note">Один сайт • Несколько направлений • Переход в Telegram</div>
 </div>
 
+<!-- ДЕВУШКИ -->
 <section class="wrap" id="profiles">
-<div class="section-head">
-<div><div class="kicker">Раздел 01</div><h2>Девушки</h2></div>
-<div class="note">Главный раздел каталога</div>
-</div>
-<div class="grid">
-<article class="card featured">
-<div class="card-top"><div class="icon">✦</div><span class="tag">С МП</span></div>
-<h3>Девушки с МП</h3>
-<p class="desc">Подборка анкет. Уточни условия и актуальность предложения у администратора.</p>
-<div class="price">2 500 ₽</div>
-<a class="btn primary" href="https://t.me/sokk7772">Написать</a>
-</article>
-<article class="card">
-<div class="card-top"><div class="icon">◇</div><span class="tag">Без МП</span></div>
-<h3>Девушки без МП</h3>
-<p class="desc">Подробности и доступность можно уточнить в Telegram.</p>
-<div class="price">6 000 ₽</div>
-<a class="btn primary" href="https://t.me/sokk7772">Написать</a>
-</article>
-</div>
+  <div class="section-head">
+    <div>
+      <div class="kicker">Раздел 01</div>
+      <h2>Девушки</h2>
+    </div>
+    <div class="note">Каталог предложений</div>
+  </div>
+
+  <div class="grid">
+    <article class="card featured">
+      <div class="card-top">
+        <div class="icon">✦</div>
+        <span class="tag">С МП</span>
+      </div>
+      <h3>Девушки с МП</h3>
+      <p class="desc">Подборка анкет. Уточни условия и актуальность предложения у администратора.</p>
+      <div class="price">2 500 ₽</div>
+      <a class="btn primary" href="https://t.me/sokk7772">Написать</a>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="icon">◇</div>
+        <span class="tag">Без МП</span>
+      </div>
+      <h3>Девушки без МП</h3>
+      <p class="desc">Подробности и доступность можно уточнить в Telegram.</p>
+      <div class="price">6 000 ₽</div>
+      <a class="btn primary" href="https://t.me/sokk7772">Написать</a>
+    </article>
+  </div>
 </section>
 
+<!-- ЧАТЫ -->
 <section class="wrap" id="chats">
-<div class="section-head">
-<div><div class="kicker">Раздел 02</div><h2>Чаты и доступ</h2></div>
-<div class="note">Условия доступа указаны в карточках</div>
-</div>
-<div class="grid">
-<article class="card">
-<div class="card-top"><div class="icon">♛</div><span class="tag">VIP</span></div>
-<h3>VIP-чаты</h3>
-<p class="desc">Доступ к VIP-разделу на постоянной основе.</p>
-<div class="price">1 500 ₽ <small>один раз</small></div>
-<a class="btn primary" href="https://t.me/sokk7772">Написать</a>
-</article>
-<article class="card">
-<div class="card-top"><div class="icon">◆</div><span class="tag">Private</span></div>
-<h3>Приватные чаты</h3>
-<p class="desc">Постоянный доступ к приватному разделу.</p>
-<div class="price">2 999 ₽ <small>один раз</small></div>
-<a class="btn primary" href="https://t.me/sokk7772">Написать</a>
-</article>
-</div>
+  <div class="section-head">
+    <div>
+      <div class="kicker">Раздел 02</div>
+      <h2>Чаты и сообщества</h2>
+    </div>
+    <div class="note">Выбирай подходящий формат общения</div>
+  </div>
+
+  <div class="community-grid">
+    <article class="community">
+      <div class="icon">✧</div>
+      <h3>Первая Telegram-группа</h3>
+      <p class="desc">Переходи в наше сообщество в Telegram.</p>
+      <a class="btn primary" href="https://t.me/+m8NU6G7r8r0xYzJi" target="_blank" rel="noopener noreferrer">Вступить в группу</a>
+    </article>
+
+    <article class="community">
+      <div class="icon">✦</div>
+      <h3>Вторая Telegram-группа</h3>
+      <p class="desc">Ещё одно пространство для общения в Telegram.</p>
+      <a class="btn primary" href="https://t.me/vpiski_tusovki_moskvyy1" target="_blank" rel="noopener noreferrer">Вступить в группу</a>
+    </article>
+
+    <article class="community">
+      <div class="icon">♛</div>
+      <h3>VIP-чаты</h3>
+      <p class="desc">Доступ к VIP-разделу на постоянной основе.</p>
+      <div class="price">1 500 ₽ <small>один раз</small></div>
+      <a class="btn primary" href="https://t.me/sokk7772">Написать</a>
+    </article>
+
+    <article class="community">
+      <div class="icon">◆</div>
+      <h3>Приватные чаты</h3>
+      <p class="desc">Постоянный доступ к приватному разделу.</p>
+      <div class="price">2 999 ₽ <small>один раз</small></div>
+      <a class="btn primary" href="https://t.me/sokk7772">Написать</a>
+    </article>
+  </div>
 </section>
 
+<!-- РЕКЛАМА -->
 <section class="wrap" id="ads">
-<div class="section-head">
-<div><div class="kicker">Раздел 03</div><h2>Реклама</h2></div>
-</div>
-<div class="adbox">
-<div>
-<h3 style="margin:0">Разместить рекламу</h3>
-<p class="desc">Несколько тарифов. Стоимость, формат и свободные места согласовываются с администратором.</p>
-</div>
-<a class="btn primary" href="https://t.me/sokk7772">Написать</a>
-</div>
+  <div class="section-head">
+    <div>
+      <div class="kicker">Раздел 03</div>
+      <h2>Реклама</h2>
+    </div>
+  </div>
+
+  <div class="adbox">
+    <div>
+      <h3 style="margin:0">Разместить рекламу</h3>
+      <p class="desc">
+        Стоимость, формат и свободные места согласовываются
+        с администратором.
+      </p>
+    </div>
+    <a class="btn primary" href="https://t.me/sokk7772">Узнать условия</a>
+  </div>
 </section>
+
+<!-- ОТЗЫВЫ -->
+<section class="wrap" id="reviews">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Раздел 04</div>
+      <h2>Отзывы</h2>
+    </div>
+    <div class="note">Мнение посетителей</div>
+  </div>
+
+  <div class="review-empty">
+    <div class="icon">☆</div>
+    <h3>Ваш отзыв может появиться здесь</h3>
+    <p class="desc">
+      Мы собираем отзывы посетителей сайта.
+      Если хотите поделиться впечатлением, напишите администрации.
+      Отзывы публикуются с согласия авторов.
+    </p>
+    <a class="btn primary" href="https://t.me/sokk7772">Оставить отзыв</a>
+  </div>
+</section>
+
+<!-- О ПРОЕКТЕ -->
+<section class="wrap" id="about">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Раздел 05</div>
+      <h2>О проекте</h2>
+    </div>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-panel">
+      <h3 style="margin-top:0">Знакомства Москва</h3>
+      <p class="desc">
+        Это площадка, объединяющая ссылки на Telegram-сообщества,
+        каталог предложений и информацию о доступных разделах.
+      </p>
+      <p class="desc">
+        Здесь можно ознакомиться с направлениями сайта,
+        перейти в Telegram-группы или связаться с администрацией,
+        чтобы уточнить подробности.
+      </p>
+      <a class="btn primary" href="https://t.me/sokk7772">Связаться с нами</a>
+    </div>
+
+    <div class="about-panel">
+      <h3 style="margin-top:0">Что есть на сайте</h3>
+      <ul class="about-list">
+        <li>✦ Каталог предложений</li>
+        <li>✦ Telegram-группы</li>
+        <li>✦ VIP- и приватные чаты</li>
+        <li>✦ Информация о рекламе</li>
+        <li>✦ Связь с администрацией</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="wrap" id="faq">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Раздел 06</div>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="note">FAQ</div>
+  </div>
+
+  <div class="faq-list">
+    <details>
+      <summary>Как вступить в Telegram-группу?</summary>
+      <p>Нажмите кнопку вступления в нужную группу. Откроется Telegram, где можно перейти к сообществу.</p>
+    </details>
+
+    <details>
+      <summary>Как связаться с администратором?</summary>
+      <p>Нажмите кнопку «Написать» на сайте или перейдите по ссылке <a href="https://t.me/sokk7772">@sokk7772</a>.</p>
+    </details>
+
+    <details>
+      <summary>Где узнать подробности о предложениях?</summary>
+      <p>Выберите интересующую карточку и нажмите «Написать», чтобы уточнить актуальность и условия у администратора.</p>
+    </details>
+
+    <details>
+      <summary>Как узнать условия VIP- и приватных чатов?</summary>
+      <p>Стоимость указана в карточках раздела «Чаты». Дополнительные подробности можно уточнить у администратора.</p>
+    </details>
+
+    <details>
+      <summary>Как разместить рекламу?</summary>
+      <p>Перейдите в раздел «Реклама» и нажмите «Узнать условия», чтобы связаться с администрацией.</p>
+    </details>
+
+    <details>
+      <summary>Как открыть Telegram-бота?</summary>
+      <p>Нажмите кнопку «Открыть бота» на главной странице сайта.</p>
+    </details>
+  </div>
+</section>
+
 </main>
 
 <footer>
-<div class="wrap">ЗНАКОМСТВА МОСКВА<br>Каталог услуг и переход в Telegram</div>
+  <div class="wrap footer-row">
+    <div>
+      <strong style="color:var(--gold2)">ЗНАКОМСТВА МОСКВА</strong>
+      <div>Каталог, сообщества и общение в Telegram</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="#profiles">Девушки</a>
+      <a href="#chats">Чаты</a>
+      <a href="#ads">Реклама</a>
+      <a href="#about">О проекте</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://t.me/sokk7772">Контакты</a>
+    </div>
+  </div>
 </footer>
+
 </body>
 </html>
