@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://znakomstva-online01.github.io/znakomstva-moskva/sitemap.xml
+Sitemap: https://moskva-znakomstva.ru/sitemap.xml
