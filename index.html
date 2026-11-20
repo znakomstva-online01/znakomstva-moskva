@@ -305,23 +305,26 @@ footer{
   display: inline-block;
   flex-shrink: 0;
 }
- /* Фиолетовое свечение кнопок */
+/* Фиолетовое свечение кнопок */
 .btn {
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-  box-shadow: 0 0 10px #b84dff,
-              0 0 22px rgba(184, 77, 255, 0.55);
+  box-shadow:
+    0 0 10px #b84dff,
+    0 0 22px rgba(184, 77, 255, 0.55);
   transform: translateY(-2px);
-  }
+}
 
-.hero h1 .subtitle {
+/* Подзаголовок главного экрана */
+.hero-subtitle {
   display: block;
-  font-size: 0.55em;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.4;
   margin-top: 12px;
+  color: var(--muted);
 }
 </style>
 </head>
@@ -349,15 +352,18 @@ footer{
 <div class="wrap hero">
   <div class="eyebrow">Москва • знакомства • общение</div>
 
-  <h1>
-    Знакомства, вписки и Telegram-чаты
-    в Москве и Московской области
-    <span class="subtitle">Твой вход в мир московского общения.</span>
-  </h1>
+ <h1>
+  Знакомства, вписки и Telegram-чаты
+  <span class="subtitle">в Москве и Московской области</span>
+</h1>
 
-  <p class="lead">
-    Группы, чаты и новые знакомства в Telegram.
-  </p>
+<div class="hero-subtitle">
+  Твой вход в мир московского общения.
+</div>
+
+<p class="lead">
+  Группы, чаты и новые знакомства в Telegram.
+</p>
 </div>
 
   <div class="actions">
