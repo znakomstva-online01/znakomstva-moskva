@@ -11,20 +11,20 @@
 <style>
 :root{
   --bg:#080808;
-  --panel:#15130f;
-  --panel2:#1e1910;
+  --panel:#15101b;
+  --panel2:#1e1228;
   --gold:#b84dff;
---gold2:#dfadff;
-  --muted:#b8b1a3;
- --line:rgba(184,77,255,.30);
-  --white:#fffaf0;
+  --gold2:#dfadff;
+  --muted:#b8b1c3;
+  --line:rgba(184,77,255,.30);
+  --white:#fffaff;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   background:
-    radial-gradient(ellipse at 50% -15%,#39280e 0%,#15120d 35%,var(--bg) 72%);
+    radial-gradient(ellipse at 50% -15%,#351044 0%,#15101b 35%,var(--bg) 72%);
   color:var(--white);
   font-family:Arial,sans-serif;
   line-height:1.6;
@@ -74,14 +74,14 @@ header{
 }
 .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
 .primary{
-  background:linear-gradient(135deg,var(--gold2),#bd8d35);
-  color:#171109;
-  box-shadow:0 7px 24px rgba(215,173,85,.13);
+  background:linear-gradient(135deg,var(--gold2),#a43be8);
+  color:#170d20;
+  box-shadow:0 7px 24px rgba(184,77,255,.18);
 }
 .secondary{
   border:1px solid var(--line);
   color:var(--gold2);
-  background:rgba(215,173,85,.04);
+  background:rgba(184,77,255,.06);
 }
 .hero{
   padding:100px 0 78px;
@@ -116,7 +116,7 @@ h1 span{color:var(--gold2)}
 }
 .hero-note{
   margin-top:30px;
-  color:#8e8575;
+  color:#a99bb3;
   font-size:12px;
 }
 section{padding:65px 0}
@@ -139,7 +139,7 @@ h2{
   gap:18px;
 }
 .card{
-  background:linear-gradient(145deg,#211c12,#111110);
+  background:linear-gradient(145deg,#21152b,#111110);
   border:1px solid var(--line);
   border-radius:22px;
   padding:26px;
@@ -147,7 +147,7 @@ h2{
 }
 .card:hover{
   transform:translateY(-3px);
-  border-color:rgba(242,213,139,.55);
+  border-color:rgba(210,150,255,.65);
 }
 .card-top{
   display:flex;
@@ -163,7 +163,7 @@ h2{
   place-items:center;
   color:var(--gold2);
   font-size:21px;
-  background:rgba(215,173,85,.06);
+  background:rgba(184,77,255,.09);
 }
 .tag{
   font-size:10px;
@@ -181,10 +181,10 @@ h3{font-size:21px;margin:18px 0 7px}
   margin:12px 0 18px;
 }
 .card .btn{width:100%}
-.featured{border-color:rgba(242,213,139,.55)}
+.featured{border-color:rgba(210,150,255,.65)}
 .featured h3{color:var(--gold2)}
 .wide-card{
-  background:linear-gradient(120deg,#251d10,#11100d);
+  background:linear-gradient(120deg,#251432,#11100d);
   border:1px solid var(--line);
   border-radius:24px;
   padding:32px;
@@ -207,7 +207,7 @@ h3{font-size:21px;margin:18px 0 7px}
   gap:20px;
 }
 .about-panel{
-  background:linear-gradient(145deg,#211c12,#111110);
+  background:linear-gradient(145deg,#21152b,#111110);
   border:1px solid var(--line);
   border-radius:22px;
   padding:30px;
@@ -226,9 +226,9 @@ h3{font-size:21px;margin:18px 0 7px}
 .review-empty{
   text-align:center;
   padding:38px 24px;
-  border:1px dashed rgba(215,173,85,.4);
+  border:1px dashed rgba(184,77,255,.5);
   border-radius:22px;
-  background:rgba(215,173,85,.035);
+  background:rgba(184,77,255,.06);
 }
 .review-empty .icon{margin:0 auto 15px}
 .faq-list{display:grid;gap:12px}
@@ -249,7 +249,7 @@ details p{color:var(--muted);font-size:14px;margin:13px 0 0}
   align-items:center;
   justify-content:space-between;
   gap:24px;
-  background:linear-gradient(120deg,#2a2112,#15120c);
+  background:linear-gradient(120deg,#2a1738,#15101c);
   border:1px solid var(--line);
   border-radius:22px;
   padding:30px;
@@ -257,7 +257,7 @@ details p{color:var(--muted);font-size:14px;margin:13px 0 0}
 footer{
   border-top:1px solid var(--line);
   padding:32px 0 42px;
-  color:#898273;
+  color:#a99bb3;
   font-size:12px;
 }
 .footer-row{
@@ -338,7 +338,6 @@ footer{
 
   <div class="hero-note">Один сайт • Несколько направлений • Переход в Telegram</div>
 </div>
-
 <!-- ДЕВУШКИ -->
 <section class="wrap" id="profiles">
   <div class="section-head">
@@ -448,26 +447,13 @@ footer{
     <div class="note">Мнение посетителей</div>
   </div>
 
-  <div class="review-card">
-    <div class="review-top">
-      <strong>Анонимный отзыв</strong>
-      <span class="review-stars">★★★★★</span>
-    </div>
-
-    <p>
-      Отлично провели время! Девушки очень приятные,
-      общительные и красивые. Очень много приятных впечатлений.
-      Вечер получился намного лучше, чем ожидали.
-      Обязательно обратимся ещё раз!
-    </p>
-  </div>
-
   <div class="review-empty">
     <div class="icon">☆</div>
     <h3>Ваш отзыв может появиться здесь</h3>
     <p class="desc">
-      Хотите поделиться впечатлением?
-      Напишите администрации. Отзывы публикуются с согласия авторов.
+      Мы собираем отзывы посетителей сайта.
+      Если хотите поделиться впечатлением, напишите администрации.
+      Отзывы публикуются с согласия авторов.
     </p>
     <a class="btn primary" href="https://t.me/sokk7772">Оставить отзыв</a>
   </div>
